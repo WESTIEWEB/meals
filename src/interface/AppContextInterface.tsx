@@ -1,0 +1,48 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export class IAppContext {
+    meals: Array<Record<string, any>> | undefined;
+    loading: boolean | undefined;
+    error: boolean | undefined;
+    searchMeal: ((meal: string) => void) | undefined;
+    fetchMeal: ((meal: string) => void) | undefined;
+    closeModal: (() => void) | undefined;
+    openModal: (() => void) | undefined;
+    modal: boolean | undefined;
+    meal: any;
+    fetchRandomMeal: (() => void) | undefined;
+    randomMeal: any;
+    fetchRandomMealByCategory: ((category: string) => void) | undefined;
+    randomMealByCategory: any;
+    fetchMealByCategory: ((category: string) => void) | undefined;
+    mealByCategory: any;
+    fetchMealByArea: ((area: string) => void) | undefined;
+    mealByArea: any;
+    fetchMealById: ((id: string) => void) | undefined;
+    mealById: any;
+    fetchMealByIngredient: ((ingredient: string) => void) | undefined;
+    mealByIngredient: any;
+    fetchMealByLetter: ((letter: string) => void) | undefined;
+    mealByLetter: any;
+    fetchMealByFirstLetter: ((letter: string) => void) | undefined;
+    mealByFirstLetter: any;
+    fetchMealByName: ((name: string) => void) | undefined;
+    mealByName: any;
+    fetchMealByTags: ((tags: string) => void) | undefined;
+    mealByTags: any;
+    fetchMealByTagsAndArea: ((tags: string, area: string) => void) | undefined;
+    mealByTagsAndArea: any;
+    fetchMealByTagsAndCategory: ((tags: string, category: string) => void) | undefined;
+    mealByTagsAndCategory: any;
+    fetchMealByTagsAndIngredient: ((tags: string, ingredient: string) => void) | undefined;
+    mealByTagsAndIngredient: any;
+    fetchMealByTagsAndLetter: ((tags: string, letter: string) => void) | undefined;
+    mealByTagsAndLetter: any;
+    fetchMealByTagsAndFirstLetter: ((tags: string, letter: string) => void) | undefined;
+    mealByTagsAndFirstLetter: any;
+    fetchMealByTagsAndName: ((tags: string, name: string) => void) | undefined;
+    mealByTagsAndName: any;
+    fetchMealByTagsAndId: ((tags: string, id: string) => void) | undefined;
+    mealByTagsAndId: any;
+    fetchMealByTagsAndRandom: ((tags: string) => void) | undefined;
+    mealByTagsAndRandom: any;
+}
