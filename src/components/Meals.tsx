@@ -1,9 +1,7 @@
-import React from 'react'
-
 const Meals = () => {
   return (
-    <div>
-      
+    <div className='bg-blue-500'>
+      hello from meals
     </div>
   )
 }
