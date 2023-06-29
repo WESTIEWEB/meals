@@ -95,3 +95,7 @@ body {
 .bg-secondary-500 {
   background-color: var(--secondary-500);
 }
+
+#root {
+  box-sizing: border-box;
+}
