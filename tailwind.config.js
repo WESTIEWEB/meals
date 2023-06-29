@@ -6,9 +6,10 @@ export default {
   theme: {
     extend: {},
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px'
+      'sm': {'max': '640px'},
+      'md': {'max':'768px'},
+      'lg': {'max':'1024px'},
+      '2xl': {'max': '1280px'},
     },
     fontFamily: {
       'sans': ['Roboto', 'sans-serif'],

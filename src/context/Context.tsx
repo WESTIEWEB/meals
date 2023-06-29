@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { createContext, useContext} from 'react';
+import { mealUrl } from '../config';
+import { apiGet } from '../utils/axiosUtils';
+import { useState } from 'react';
 
 const AppContext = createContext<unknown | undefined>(undefined);
 
@@ -7,24 +11,27 @@ interface IchildrenProps {
 }
 
 const AppProvider = ({ children }: IchildrenProps) => {
+    const [meals, setMeals] = useState<Array<Record<string, any>>>([]);
+    const [loading, setLoading] = useState<boolean>(false);
 
-    // mounting the context api, and logging random meals to the console
-    React.useEffect(() => {
-        const fetchMeals = async () => {
-            try {
-                const response = await fetch('https://randomuser.me/api/?results=10');
-                const data = await response.json();
-                console.log(data);
-            } catch (error: any) {
-                console.log(error.stack)
-            }
+    const fetchMeals = async (url: string) => {
+        try {
+            const { data } = await apiGet(url);
+            if(!data) return;
+            setMeals(data.meals);
+            setLoading(true);
+        } catch (error: any) {
+            console.log(error.stack)
         }
-        fetchMeals();
+    }
+    // mounting the AppProvider
+    React.useEffect(() => {
+        fetchMeals(mealUrl);
     }, []);
 
   return (
     <AppContext.Provider value={{
-
+        meals,
     }}>
       {children}
     </AppContext.Provider>
